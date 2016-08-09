@@ -1,0 +1,115 @@
+2015/12/28 17:59:31 [INFO] Terraform version: 0.6.8  f1f214f03df27c1a790980b6f050fe92a7a547bf
+2015/12/28 17:59:31 [DEBUG] Detected home directory from env var: /home/terraform
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: atlas = /home/terraform/bin/terraform-provider-atlas
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: aws = /home/terraform/bin/terraform-provider-aws
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: azure = /home/terraform/bin/terraform-provider-azure
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: cloudflare = /home/terraform/bin/terraform-provider-cloudflare
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: cloudstack = /home/terraform/bin/terraform-provider-cloudstack
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: consul = /home/terraform/bin/terraform-provider-consul
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: digitalocean = /home/terraform/bin/terraform-provider-digitalocean
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: dme = /home/terraform/bin/terraform-provider-dme
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: dnsimple = /home/terraform/bin/terraform-provider-dnsimple
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: docker = /home/terraform/bin/terraform-provider-docker
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: dyn = /home/terraform/bin/terraform-provider-dyn
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: google = /home/terraform/bin/terraform-provider-google
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: heroku = /home/terraform/bin/terraform-provider-heroku
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: mailgun = /home/terraform/bin/terraform-provider-mailgun
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: null = /home/terraform/bin/terraform-provider-null
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: openstack = /home/terraform/bin/terraform-provider-openstack
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: packet = /home/terraform/bin/terraform-provider-packet
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: rundeck = /home/terraform/bin/terraform-provider-rundeck
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: statuscake = /home/terraform/bin/terraform-provider-statuscake
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: template = /home/terraform/bin/terraform-provider-template
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: terraform = /home/terraform/bin/terraform-provider-terraform
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: tls = /home/terraform/bin/terraform-provider-tls
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: vsphere = /home/terraform/bin/terraform-provider-vsphere
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: chef = /home/terraform/bin/terraform-provisioner-chef
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: file = /home/terraform/bin/terraform-provisioner-file
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: local-exec = /home/terraform/bin/terraform-provisioner-local-exec
+2015/12/28 17:59:31 [DEBUG] Discovered plugin: remote-exec = /home/terraform/bin/terraform-provisioner-remote-exec
+2015/12/28 17:59:31 [DEBUG] Detected home directory from env var: /home/terraform
+2015/12/28 17:59:31 [DEBUG] Attempting to open CLI config file: /home/terraform/.terraformrc
+2015/12/28 17:59:31 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2015/12/28 17:59:31 [DEBUG] waiting for all plugin processes to complete...
+2015/12/28 17:59:31 [DEBUG] Detected home directory from env var: /home/terraform
+panic: runtime error: index out of range
+
+goroutine 1 [running]:
+github.com/hashicorp/hcl/hcl/parser.(*Parser).objectItem(0xc8200fade0, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:154 +0x423
+github.com/hashicorp/hcl/hcl/parser.(*Parser).objectList(0xc8200fade0, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:69 +0xc1
+github.com/hashicorp/hcl/hcl/parser.(*Parser).objectType(0xc8200fade0, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:241 +0xf1
+github.com/hashicorp/hcl/hcl/parser.(*Parser).objectItem(0xc8200fade0, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:146 +0x1fc
+github.com/hashicorp/hcl/hcl/parser.(*Parser).objectList(0xc8200fade0, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:69 +0xc1
+github.com/hashicorp/hcl/hcl/parser.(*Parser).Parse(0xc8200fade0, 0xc8200b5380, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:52 +0x100
+github.com/hashicorp/hcl/hcl/parser.Parse(0xc820151a00, 0x60f, 0x680, 0xc820151a00, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:39 +0x185
+github.com/hashicorp/hcl.Parse(0xc820151380, 0x60f, 0x60f, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/parse.go:17 +0x89
+github.com/hashicorp/terraform/config.loadFileHcl(0xc820166370, 0x4a, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/config/loader_hcl.go:155 +0x2d6
+github.com/hashicorp/terraform/config.loadTree(0xc820166370, 0x4a, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/config/import_tree.go:47 +0x313
+github.com/hashicorp/terraform/config.LoadFile(0xc820166370, 0x4a, 0xc820131600, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/config/loader.go:39 +0x3b
+github.com/hashicorp/terraform/config.LoadDir(0xc820018004, 0x3d, 0x10, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/config/loader.go:91 +0x38c
+github.com/hashicorp/terraform/config/module.NewTreeModule(0x0, 0x0, 0xc820018004, 0x3d, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/config/module/tree.go:40 +0x41
+github.com/hashicorp/terraform/command.(*Meta).Context(0xc820084a00, 0xc820018004, 0x3d, 0xf6c660, 0x11, 0x0, 0xa, 0x4, 0x43ba01, 0x0, ...)
+	/opt/gopath/src/github.com/hashicorp/terraform/command/meta.go:148 +0x509
+github.com/hashicorp/terraform/command.(*ApplyCommand).Run(0xc820084a00, 0xc82000a200, 0x0, 0x0, 0xc820053e98)
+	/opt/gopath/src/github.com/hashicorp/terraform/command/apply.go:103 +0xd46
+github.com/mitchellh/cli.(*CLI).Run(0xc820131550, 0xc8201561b0, 0x0, 0x0)
+	/opt/gopath/src/github.com/mitchellh/cli/cli.go:112 +0x655
+main.wrappedMain(0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/main.go:146 +0xb08
+main.realMain(0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/main.go:82 +0xa88
+main.main()
+	/opt/gopath/src/github.com/hashicorp/terraform/main.go:18 +0x18
+
+goroutine 5 [syscall]:
+os/signal.loop()
+	/usr/local/go/src/os/signal/signal_unix.go:22 +0x18
+created by os/signal.init.1
+	/usr/local/go/src/os/signal/signal_unix.go:28 +0x37
+
+goroutine 8 [select, locked to thread]:
+runtime.gopark(0x108fd18, 0xc820028f28, 0xeb3fb8, 0x6, 0x18, 0x2)
+	/usr/local/go/src/runtime/proc.go:185 +0x163
+runtime.selectgoImpl(0xc820028f28, 0x0, 0x18)
+	/usr/local/go/src/runtime/select.go:392 +0xa64
+runtime.selectgo(0xc820028f28)
+	/usr/local/go/src/runtime/select.go:212 +0x12
+runtime.ensureSigM.func1()
+	/usr/local/go/src/runtime/signal1_unix.go:227 +0x353
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1696 +0x1
+
+goroutine 9 [chan receive]:
+main.makeShutdownCh.func1(0xc82001b2c0, 0xc82001b260)
+	/opt/gopath/src/github.com/hashicorp/terraform/commands.go:134 +0x36
+created by main.makeShutdownCh
+	/opt/gopath/src/github.com/hashicorp/terraform/commands.go:137 +0x100
+
+goroutine 10 [semacquire]:
+sync.runtime_Syncsemacquire(0xc82010a400)
+	/usr/local/go/src/runtime/sema.go:237 +0x201
+sync.(*Cond).Wait(0xc82010a3f0)
+	/usr/local/go/src/sync/cond.go:62 +0x9b
+io.(*pipe).read(0xc82010a3c0, 0xc820155000, 0x1000, 0x1000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/io/pipe.go:52 +0x2d2
+io.(*PipeReader).Read(0xc82002a150, 0xc820155000, 0x1000, 0x1000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/io/pipe.go:134 +0x50
+bufio.(*Scanner).Scan(0xc82007c900, 0x0)
+	/usr/local/go/src/bufio/scan.go:180 +0x877
+github.com/hashicorp/terraform/command.(*Meta).flagSet.func1(0xc82007c900, 0xc820084a00)
+	/opt/gopath/src/github.com/hashicorp/terraform/command/meta.go:323 +0x25
+created by github.com/hashicorp/terraform/command.(*Meta).flagSet
+	/opt/gopath/src/github.com/hashicorp/terraform/command/meta.go:326 +0x5d5

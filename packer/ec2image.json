@@ -1,0 +1,30 @@
+{
+ "variables": {
+   "aws_access_key": "",
+   "aws_secret_key": ""
+ },
+ "builders": [{
+   "type": "amazon-ebs",
+   "access_key": "{{user `aws_access_key`}}",
+   "secret_key": "{{user `aws_secret_key`}}",
+   "region": "sa-east-1",
+   "source_ami": "ami-0fb83963",
+   "subnet_id" : "subnet-5cded639",
+   "vpc_id" : "vpc-caeba7af",
+   "instance_type": "t2.micro",
+   "ssh_username": "ubuntu",
+   "tags": { "OS_Version" : "Ubuntu" },
+   "run_tags": { "Name" : "Packer" },
+   "ami_name": "packer-appweb-asc {{timestamp}}"
+ }],
+ "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "sleep 30",
+      "sudo apt-get update"
+    ]
+  },{
+   "type": "shell-local",
+   "command" : "echo foo"
+  }]
+}
